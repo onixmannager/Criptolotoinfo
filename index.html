@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicando IA CriPredictor</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Color de texto blanco */
+            font-family: 'Press Start 2P', cursive; /* Fuente pixelada de videojuego */
+            text-align: center; /* Centrar el contenido */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100vh; /* Altura del viewport */
+        }
+        @font-face {
+            font-family: 'Press Start 2P';
+            src: url('https://fonts.gstatic.com/s/pressstart2p/v6/8LWAbwDqzlQseGbR7fI.ttf');
+        }
+        .content {
+            flex: 1; /* Hace que este bloque ocupe el espacio restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title {
+            font-size: 8vw; /* Tamaño del título en unidades viewport width */
+            margin: 1vh 0; /* Espacio superior e inferior para el título */
+            color: #ff00ff; /* Color rosa fucsia */
+        }
+        .subtitle {
+            font-size: 6vw; /* Tamaño del subtítulo en unidades viewport width */
+            margin: 0.5vh 0; /* Espacio superior e inferior para el subtítulo */
+            color: #ff80ff; /* Color rosa fucsia más claro */
+        }
+        .info-text {
+            font-size: 6vw; /* Tamaño del texto de información en unidades viewport width */
+            margin: 1vh 0; /* Espacio superior e inferior para el texto de información */
+            color: #ff1493; /* Color rosa fuerte */
+        }
+        video {
+            width: 100%; /* Ancho completo del video */
+            height: auto; /* Altura automática */
+            object-fit: cover;
+            background-color: #000; /* Color de fondo negro */
+            margin: 1vh 0; /* Espacio superior e inferior para el video */
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2vh 0; /* Espacio superior e inferior para los botones */
+        }
+        .social-buttons a {
+            display: inline-block;
+            margin: 3vw; /* Margen entre los botones en unidades viewport width */
+            cursor: pointer; /* Cambiar el cursor a mano */
+        }
+        .social-buttons img {
+            width: 15vw; /* Ancho de los botones en unidades viewport width */
+            height: auto; /* Altura automática */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">CriptoLotto</h1>
+        <h2 class="subtitle">Más que un simple juego de azar</h2>
+        <video id="myVideo" src="Criptolotovideo.mp4" autoplay loop muted playsinline></video>
+        <p class="info-text">Para más información:</p>
+        <div class="social-buttons">
+            <a href="https://twitter.com/tuusuario" target="_blank">
+                <img src="Logox.jpg" alt="Twitter">
+            </a>
+            <a href="https://t.me/tucanal" target="_blank">
+                <img src="Logotelegram.jpg" alt="Telegram">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para activar el audio del video automáticamente
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('myVideo');
+            video.muted = false; // Asegurar que el audio no esté silenciado automáticamente
+            video.volume = 1.0; // Establecer el volumen al máximo
+            video.play(); // Reproducir el video automáticamente
+        });
+    </script>
+</body>
+</html>
