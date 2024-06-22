@@ -12,21 +12,20 @@
             color: #fff; /* Color de texto blanco */
             font-family: 'Press Start 2P', cursive; /* Fuente pixelada de videojuego */
             text-align: center; /* Centrar el contenido */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
             height: 100vh; /* Altura del viewport */
+            overflow-x: hidden; /* Ocultar desbordamiento horizontal */
         }
         @font-face {
             font-family: 'Press Start 2P';
             src: url('https://fonts.gstatic.com/s/pressstart2p/v6/8LWAbwDqzlQseGbR7fI.ttf');
         }
         .content {
-            flex: 1; /* Hace que este bloque ocupe el espacio restante */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 100%; /* Ajustar al viewport */
+            padding: 20px; /* Espacio interior para el contenido */
         }
         .title {
             font-size: 8vw; /* Tamaño del título en unidades viewport width */
@@ -43,13 +42,6 @@
             margin: 1vh 0; /* Espacio superior e inferior para el texto de información */
             color: #ff1493; /* Color rosa fuerte */
         }
-        video {
-            width: 100%; /* Ancho completo del video */
-            height: auto; /* Altura automática */
-            object-fit: cover;
-            background-color: #000; /* Color de fondo negro */
-            margin: 1vh 0; /* Espacio superior e inferior para el video */
-        }
         .social-buttons {
             display: flex;
             justify-content: center;
@@ -65,13 +57,20 @@
             width: 15vw; /* Ancho de los botones en unidades viewport width */
             height: auto; /* Altura automática */
         }
+        iframe {
+            width: calc(100vw - 40px); /* Ancho del viewport menos el espacio para los laterales */
+            max-width: 800px; /* Ancho máximo del video para mantener la legibilidad */
+            height: calc(56.25vw - 40px); /* Mantener relación de aspecto 16:9 */
+            max-height: 450px; /* Altura máxima para evitar que sea demasiado grande */
+            margin: 20px; /* Margen para separar del contenido */
+        }
     </style>
 </head>
 <body>
     <div class="content">
         <h1 class="title">CriptoLotto</h1>
         <h2 class="subtitle">Más que un simple juego de azar</h2>
-        <video id="myVideo" src="https://youtu.be/y-pEduH1l4s?si=frzXKDYoDDRTUgE_" autoplay loop muted playsinline></video>
+        <iframe src="https://www.youtube.com/embed/y-pEduH1l4s?autoplay=1&controls=0&modestbranding=1&rel=0" frameborder="0" allowfullscreen></iframe>
         <p class="info-text">Para más información:</p>
         <div class="social-buttons">
             <a href="https://twitter.com/tuusuario" target="_blank">
@@ -82,15 +81,5 @@
             </a>
         </div>
     </div>
-
-    <script>
-        // JavaScript para activar el audio del video automáticamente
-        document.addEventListener('DOMContentLoaded', function() {
-            var video = document.getElementById('myVideo');
-            video.muted = false; // Asegurar que el audio no esté silenciado automáticamente
-            video.volume = 1.0; // Establecer el volumen al máximo
-            video.play(); // Reproducir el video automáticamente
-        });
-    </script>
 </body>
 </html>
